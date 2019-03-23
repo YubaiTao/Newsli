@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 public interface NSFragmentManager {
 
-    // void doFragmentTransaction(TinBasicFragment basicFragment);
+    void doFragmentTransaction(NSBasicFragment basicFragment);
 
     void startActivityWithBundle (Class<?> clazz , boolean isFinished , Bundle bundle);
 

@@ -20,6 +20,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.yubaitao.newsli.common.NSBasicActivity;
+import com.yubaitao.newsli.common.NSBasicFragment;
 
 public class WebViewActivity extends NSBasicActivity
         implements PopupMenu.OnMenuItemClickListener{
@@ -75,6 +76,11 @@ public class WebViewActivity extends NSBasicActivity
                 showMenu(v);
             }
         });
+    }
+
+    @Override
+    public void doFragmentTransaction(NSBasicFragment basicFragment) {
+
     }
 
     @Override
