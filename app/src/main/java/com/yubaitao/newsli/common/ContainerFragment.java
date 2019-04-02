@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.yubaitao.newsli.R;
 import com.yubaitao.newsli.save.SavedNewsFragment;
+import com.yubaitao.newsli.sli.SliGalleryFragment;
 
 public class ContainerFragment extends NSBasicFragment {
 
@@ -63,7 +64,7 @@ public class ContainerFragment extends NSBasicFragment {
     private static Fragment createInitFragmentByIndex(int pageIndex) {
         switch (pageIndex) {
             case HOME_PAGE:
-                return null;
+                return SliGalleryFragment.newInstance();
             case SAVE_PAGE:
                 return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
