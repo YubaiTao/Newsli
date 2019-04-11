@@ -11,7 +11,14 @@ import com.mindorks.placeholderview.SwipeDecor;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
 import com.yubaitao.newsli.R;
 import com.yubaitao.newsli.common.NSBasicFragment;
+import com.yubaitao.newsli.retrofit.NewsRequestAPI;
+import com.yubaitao.newsli.retrofit.RetrofitClient;
 import com.yubaitao.newsli.retrofit.response.News;
+
+import java.util.List;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,17 +66,37 @@ public class SliGalleryFragment extends NSBasicFragment implements SliNewsCard.O
             }
         });
 
-        for (int i = 0; i < 50; i++) {
-            News news = new News();
-            news.image = "https://assets.vogue.com/photos/5a20250511b13f636dfc8df0/master/w_1560,c_limit/00-story-image-liu-yifei.jpg";
-            news.title = "This is a test.";
-            news.description = "Test description";
-            news.author = "Tester";
+//        for (int i = 0; i < 50; i++) {
+//            News news = new News();
+//            news.image = "https://assets.vogue.com/photos/5a20250511b13f636dfc8df0/master/w_1560,c_limit/00-story-image-liu-yifei.jpg";
+//            news.title = "This is a test.";
+//            news.description = "Test description";
+//            news.author = "Tester";
+//            SliNewsCard sliNewsCard = new SliNewsCard(news, mSwipeView, this);
+//            mSwipeView.addView(sliNewsCard);
+//        }
+        getData();
+
+        return view;
+    }
+
+    private void getData() {
+        RetrofitClient.getInstance().create(NewsRequestAPI.class).getNewsByCountry("us")
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .filter(baseResponse -> baseResponse != null && baseResponse.articles != null)
+                .subscribe(baseResponse -> {
+                    showNewsCard(baseResponse.articles);
+                }, error -> {
+
+                });
+    }
+
+    private void showNewsCard(List<News> newsList) {
+        for (News news : newsList) {
             SliNewsCard sliNewsCard = new SliNewsCard(news, mSwipeView, this);
             mSwipeView.addView(sliNewsCard);
         }
-
-        return view;
     }
 
     @Override

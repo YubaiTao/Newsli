@@ -17,10 +17,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 ext {
     googleVersion = '28.0.0'
+    retrofitVersion = '2.2.0'
+    rxjavaVersion = '2.0.1'
 }
 
 dependencies {
@@ -37,6 +43,14 @@ dependencies {
     implementation "com.android.support:exifinterface:${googleVersion}"
 
     implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // retrofit and rxjava dependency
+    implementation "io.reactivex.rxjava2:rxjava:${rxjavaVersion}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rxjavaVersion}"
+
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
 
     // PlaceholderView dependency
     implementation 'com.mindorks.android:placeholderview:1.0.3'

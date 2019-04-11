@@ -32,12 +32,7 @@ public class SavedNewsFragment extends NSBasicFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_saved_news, container, false);
-        view.findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nsFragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance());
-            }
-        });
+        view.findViewById(R.id.text).setOnClickListener(v -> nsFragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance()));
         return view;
     }
 

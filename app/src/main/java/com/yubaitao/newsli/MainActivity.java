@@ -32,12 +32,9 @@ public class MainActivity extends NSBasicActivity {
         viewPager.setOffscreenPageLimit(NSFragmentPagerAdapter.FRAGMENT_NUMBER);
 
         bottomBar = findViewById(R.id.bottom_navigation);
-        bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                viewPager.setCurrentItem(ContainerFragment.getPositionById(menuItem.getItemId()));
-                return true;
-            }
+        bottomBar.setOnNavigationItemSelectedListener(menuItem -> {
+            viewPager.setCurrentItem(ContainerFragment.getPositionById(menuItem.getItemId()));
+            return true;
         });
     }
 
