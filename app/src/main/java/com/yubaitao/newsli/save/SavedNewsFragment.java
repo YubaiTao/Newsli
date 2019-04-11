@@ -9,12 +9,14 @@ import android.view.ViewGroup;
 
 import com.yubaitao.newsli.R;
 import com.yubaitao.newsli.common.NSBasicFragment;
+import com.yubaitao.newsli.mvp.MVPFragment;
 import com.yubaitao.newsli.save.detail.SavedNewsDetailedFragment;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SavedNewsFragment extends NSBasicFragment {
+public class SavedNewsFragment extends MVPFragment<SavedNewsContract.Presenter>
+        implements SavedNewsContract.View{
 
 
     public SavedNewsFragment() {
@@ -36,4 +38,8 @@ public class SavedNewsFragment extends NSBasicFragment {
         return view;
     }
 
+    @Override
+    public SavedNewsContract.Presenter getPresenter() {
+        return new SavedNewsPresenter();
+    }
 }
