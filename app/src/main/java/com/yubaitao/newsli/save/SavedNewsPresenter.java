@@ -1,5 +1,9 @@
 package com.yubaitao.newsli.save;
 
+import com.yubaitao.newsli.retrofit.response.News;
+
+import java.util.List;
+
 public class SavedNewsPresenter implements SavedNewsContract.Presenter {
 
     private final SavedNewsContract.Model model;
@@ -19,6 +23,7 @@ public class SavedNewsPresenter implements SavedNewsContract.Presenter {
     @Override
     public void onViewAttached(SavedNewsContract.View view) {
         this.view = view;
+        this.model.fetchData();
     }
 
     @Override
@@ -29,5 +34,12 @@ public class SavedNewsPresenter implements SavedNewsContract.Presenter {
     @Override
     public void onDestroy() {
 
+    }
+
+    @Override
+    public void loadSavedNews(List<News> newsList) {
+        if (view != null) {
+            view.loadSavedNews(newsList);
+        }
     }
 }
