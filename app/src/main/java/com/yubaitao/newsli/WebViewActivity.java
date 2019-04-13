@@ -41,9 +41,9 @@ public class WebViewActivity extends NSBasicActivity
                 onBackPressed();
             }
         });
-        progressBar = findViewById(R.id.progress_bar );
-        final WebView webView = findViewById(R.id.web_view );
-        webView.getSettings().setJavaScriptEnabled( true );
+        progressBar = findViewById(R.id.progress_bar);
+        final WebView webView = findViewById(R.id.web_view);
+        webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
         webView.setWebViewClient(new WebViewClient() {
             @Override
@@ -60,17 +60,15 @@ public class WebViewActivity extends NSBasicActivity
             }
         });
 
-//        Bundle bundle = getIntent().getExtras();
-//        if (bundle != null) {
-//            Bundle innerBundle = bundle.getBundle(BUNDLE);
-//            if (innerBundle != null) {
-//                url = innerBundle.getString(URL);
-//                webView.loadUrl(url);
-//            }
-//        }
-        url = "https://www.google.com";
-        webView.loadUrl( url );
-        findViewById(R.id. more ).setOnClickListener( new View.OnClickListener() {
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            Bundle innerBundle = bundle.getBundle(BUNDLE);
+            if (innerBundle != null) {
+                url = innerBundle.getString(URL);
+                webView.loadUrl(url);
+            }
+        }
+        findViewById(R.id.more).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showMenu(v);

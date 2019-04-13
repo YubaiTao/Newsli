@@ -30,9 +30,6 @@ public class SavedNewsFragment extends MVPFragment<SavedNewsContract.Presenter>
     private ViewModelAdapter savedNewsAdapter;
     private TextView emptyState;
 
-    public SavedNewsFragment() {
-        // Required empty public constructor
-    }
 
     public static SavedNewsFragment newInstance() {
         Bundle args = new Bundle();
