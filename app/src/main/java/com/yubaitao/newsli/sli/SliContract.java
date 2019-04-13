@@ -8,12 +8,13 @@ import java.util.List;
 public interface SliContract {
     interface View extends MVPContract.View<Presenter> {
         void showNewsCard(List<News> newsList);
+        void onError();
     }
 
     interface Presenter extends MVPContract.Presenter<View, Model> {
         void showNewsCard(List<News> newsList);
-
         void saveFavoriteNews(News news);
+        void onError();
     }
 
     interface Model extends MVPContract.Model<Presenter> {

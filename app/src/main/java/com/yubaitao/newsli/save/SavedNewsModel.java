@@ -27,7 +27,7 @@ public class SavedNewsModel implements SavedNewsContract.Model {
         Disposable disposable = db.newsDao().getAll()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(presenter::loadSavedNews, error -> {
+                 .subscribe(presenter::loadSavedNews, error -> {
                    System.out.println("error");
                 }, () -> {
                     System.out.println("complete");

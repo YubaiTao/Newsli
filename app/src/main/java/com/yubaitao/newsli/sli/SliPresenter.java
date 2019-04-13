@@ -9,7 +9,7 @@ public class SliPresenter implements SliContract.Presenter {
     private SliContract.View view;
     private SliContract.Model model;
 
-    public SliPresenter() {
+    SliPresenter() {
         this.model = new SliModel();
         this.model.setPresenter(this);
     }
@@ -47,5 +47,12 @@ public class SliPresenter implements SliContract.Presenter {
     @Override
     public void saveFavoriteNews(News news) {
         model.saveFavoriteNews(news);
+    }
+
+    @Override
+    public void onError() {
+        if (view != null) {
+            view.onError();
+        }
     }
 }

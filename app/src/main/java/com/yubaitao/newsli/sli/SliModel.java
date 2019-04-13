@@ -1,6 +1,7 @@
 package com.yubaitao.newsli.sli;
 
 import android.annotation.SuppressLint;
+import android.database.sqlite.SQLiteConstraintException;
 
 import com.yubaitao.newsli.NSApplication;
 import com.yubaitao.newsli.database.AppDatabase;
@@ -9,7 +10,6 @@ import com.yubaitao.newsli.retrofit.RetrofitClient;
 import com.yubaitao.newsli.retrofit.response.News;
 
 import io.reactivex.Completable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -34,7 +34,7 @@ public class SliModel implements SliContract.Model {
 
     @Override
     public void fetchData() {
-        newsRequestAPI.getNewsByCountry("us")
+        Disposable disposable = newsRequestAPI.getNewsByCountry("us")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .filter(baseResponse -> baseResponse != null && baseResponse.articles != null)
@@ -54,7 +54,9 @@ public class SliModel implements SliContract.Model {
                 .subscribe(()-> {
 
                 }, error -> {
-
+                    if (error instanceof SQLiteConstraintException) {
+                        presenter.onError();
+                    }
                 });
     }
 }
