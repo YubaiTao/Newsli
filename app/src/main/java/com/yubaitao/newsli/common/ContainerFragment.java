@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yubaitao.newsli.R;
+import com.yubaitao.newsli.profile.ProfileFragment;
 import com.yubaitao.newsli.save.SavedNewsFragment;
 import com.yubaitao.newsli.sli.SliGalleryFragment;
 
@@ -33,9 +34,6 @@ public class ContainerFragment extends NSBasicFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        View view = super.onCreateView(inflater, container, savedInstanceState);
-//        TextView textView = view.findViewById(R.id.text);
-//        textView.setText("This is containerFragment " + pageIndex);
         return inflater.inflate(R.layout.child_fragment_container, container, false);
     }
 
@@ -68,7 +66,7 @@ public class ContainerFragment extends NSBasicFragment {
             case SAVE_PAGE:
                 return SavedNewsFragment.newInstance();
             case PROFILE_PAGE:
-                return null;
+                return ProfileFragment.newInstance();
             default:
                 throw new IndexOutOfBoundsException();
         }
