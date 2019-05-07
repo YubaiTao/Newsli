@@ -33,8 +33,8 @@ public class SliModel implements SliContract.Model {
     }
 
     @Override
-    public void fetchData() {
-        Disposable disposable = newsRequestAPI.getNewsByCountry("us")
+    public void fetchData(String country) {
+        Disposable disposable = newsRequestAPI.getNewsByCountry(country)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .filter(baseResponse -> baseResponse != null && baseResponse.articles != null)

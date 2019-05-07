@@ -3,6 +3,8 @@ package com.yubaitao.newsli.profile;
 import com.yubaitao.newsli.NSApplication;
 import com.yubaitao.newsli.database.AppDatabase;
 
+import org.greenrobot.eventbus.EventBus;
+
 import io.reactivex.Completable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -28,7 +30,7 @@ public class ProfileModel implements ProfileContract.Model {
 
     @Override
     public void setDefaultCountry(String country) {
-
+        EventBus.getDefault().post(new CountryEvent(country));
     }
 
     @Override

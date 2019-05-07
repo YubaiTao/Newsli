@@ -1,6 +1,11 @@
 package com.yubaitao.newsli.sli;
 
+import com.yubaitao.newsli.profile.CountryEvent;
 import com.yubaitao.newsli.retrofit.response.News;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -16,13 +21,13 @@ public class SliPresenter implements SliContract.Presenter {
 
     @Override
     public void onCreate() {
-
+        EventBus.getDefault().register(this);
     }
 
     @Override
     public void onViewAttached(SliContract.View view) {
         this.view = view;
-        this.model.fetchData();
+        this.model.fetchData("us");
     }
 
     @Override
@@ -32,7 +37,14 @@ public class SliPresenter implements SliContract.Presenter {
 
     @Override
     public void onDestroy() {
+        EventBus.getDefault().unregister(this);
+    }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(CountryEvent countryEvent) {
+        if (this.view != null) {
+            model.fetchData(countryEvent.country);
+        }
     }
 
     @Override

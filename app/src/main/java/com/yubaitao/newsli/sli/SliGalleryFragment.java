@@ -69,6 +69,9 @@ public class SliGalleryFragment extends MVPFragment<SliContract.Presenter> imple
 
     @Override
     public void showNewsCard(List<News> newsList) {
+
+        mSwipeView.removeAllViews();
+
         for (News news : newsList) {
             SliNewsCard sliNewsCard = new SliNewsCard(news, mSwipeView, this);
             mSwipeView.addView(sliNewsCard);

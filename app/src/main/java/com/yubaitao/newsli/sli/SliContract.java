@@ -18,7 +18,7 @@ public interface SliContract {
     }
 
     interface Model extends MVPContract.Model<Presenter> {
-        void fetchData();
+        void fetchData(String country);
 
         void saveFavoriteNews(News news);
     }

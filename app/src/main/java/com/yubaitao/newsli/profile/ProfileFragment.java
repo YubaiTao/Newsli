@@ -51,6 +51,22 @@ public class ProfileFragment extends MVPFragment<ProfileContract.Presenter> impl
 
         viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.clear_cache),
                 presenter.getCacheClearListener()));
+
+        viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.change_source),
+                R.layout.setting_title_layout));
+
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.us),
+                presenter.getOnCountryChangeListener(getString(R.string.us))));
+
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.de),
+                presenter.getOnCountryChangeListener(getString(R.string.de))));
+
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.cn),
+                presenter.getOnCountryChangeListener(getString(R.string.cn))));
+
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.jp),
+                presenter.getOnCountryChangeListener(getString(R.string.jp))));
+
     }
 
     @Override
