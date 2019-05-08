@@ -15,6 +15,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/four_dp"
         android:textSize="16sp"
+        android:fontFamily="@font/coves_light"
         />
 
     <ImageView

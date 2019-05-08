@@ -18,8 +18,8 @@
 
     <!-- Settings -->
     <string name="change_source">Change Source</string>
-    <string name="de">de</string>
-    <string name="us">us</string>
-    <string name="cn">cn</string>
-    <string name="jp">jp</string>
+    <string name="de">Germany</string>
+    <string name="us">United States</string>
+    <string name="cn">China</string>
+    <string name="jp">Japan</string>
 </resources>
