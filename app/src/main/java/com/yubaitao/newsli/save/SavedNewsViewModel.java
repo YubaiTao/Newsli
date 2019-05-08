@@ -20,11 +20,12 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
     private NSFragmentManager fragmentManager;
     private static int[] ICON_ARRAY = new int[]{
             // TODO: Modify dummy image
-            R.drawable.a_news_icon,
-            R.drawable.g_news_icon,
-            R.drawable.c_news_icon,
-            R.drawable.y_news_icon,
-            R.drawable.m_news_icon,
+            R.drawable.dummy_1,
+            R.drawable.dummy_2,
+            R.drawable.dummy_3,
+            R.drawable.dummy_4,
+            R.drawable.dummy_5,
+            R.drawable.dummy_6
     };
 
     public SavedNewsViewModel(News news, NSFragmentManager fragmentManager) {
@@ -54,7 +55,7 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
     @DrawableRes
     private int getDrawable() {
         // TODO: modify here to match other avatar images
-        return ICON_ARRAY[(int)(Math.random()*5)];
+        return ICON_ARRAY[(int)(Math.random()*6)];
     }
 
 

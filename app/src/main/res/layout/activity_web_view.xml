@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf= "parent"
         android:layout_margin= "@dimen/eight_dp"
         android:id= "@+id/back"
-        app:srcCompat= "@drawable/ic_close_black_24dp" />
+        app:srcCompat= "@drawable/ic_expand_more_black_24dp" />
     <ImageView
         android:layout_width= "24dp"
         android:layout_height= "24dp"
