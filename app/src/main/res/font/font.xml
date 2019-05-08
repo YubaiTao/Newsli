@@ -9,4 +9,17 @@
         android:fontStyle="normal"
         android:fontWeight="400"
         android:font="@font/indie_flower" />
+
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/garamond_unicode" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/bodoni_roman" />
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/coves_light" />
 </font-family>

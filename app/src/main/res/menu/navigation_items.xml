@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
     <item android:id= "@+id/action_sli"
         android:title= "@string/sli"
-        android:icon= "@drawable/ic_sli_24" />
+        android:icon= "@drawable/ic_filter_none_black_24dp" />
     <item android:id= "@+id/action_save"
         android:title= "@string/save"
-        android:icon= "@drawable/ic_save_24dp" />
+        android:icon= "@drawable/ic_star_black_24dp" />
     <item android:id= "@+id/action_profile"
         android:title= "@string/profile"
-        android:icon= "@drawable/ic_profile_24dp" />
+        android:icon= "@drawable/ic_widgets_black_24dp" />
 </menu>

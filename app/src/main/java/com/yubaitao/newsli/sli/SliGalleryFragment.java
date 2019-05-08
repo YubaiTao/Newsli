@@ -43,10 +43,10 @@ public class SliGalleryFragment extends MVPFragment<SliContract.Presenter> imple
         mSwipeView.getBuilder()
                 .setDisplayViewCount(3)
                 .setSwipeDecor(new SwipeDecor()
-                                .setPaddingTop(20)
-                                .setRelativeScale(0.01f)
-                                .setSwipeInMsgLayoutId(R.layout.sli_news_swipe_in_msg_view)
-                                .setSwipeOutMsgLayoutId(R.layout.sli_news_swipe_out_msg_view));
+                        .setPaddingTop(20)
+                        .setRelativeScale(0.01f)
+                        .setSwipeInMsgLayoutId(R.layout.sli_news_swipe_in_msg_view)
+                        .setSwipeOutMsgLayoutId(R.layout.sli_news_swipe_out_msg_view));
 
         view.findViewById(R.id.rejectBtn).setOnClickListener(new View.OnClickListener() {
             @Override

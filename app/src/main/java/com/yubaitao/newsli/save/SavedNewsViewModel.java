@@ -19,6 +19,7 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
     private News news;
     private NSFragmentManager fragmentManager;
     private static int[] ICON_ARRAY = new int[]{
+            // TODO: Modify dummy image
             R.drawable.a_news_icon,
             R.drawable.g_news_icon,
             R.drawable.c_news_icon,

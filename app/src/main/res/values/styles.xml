@@ -10,4 +10,16 @@
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     </style>
 
+    <style name="NavigationTextActive" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/coves_bold</item>
+    </style>
+
+    <style name="NavigationTextInactive" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/coves_light</item>
+    </style>
+
 </resources>
