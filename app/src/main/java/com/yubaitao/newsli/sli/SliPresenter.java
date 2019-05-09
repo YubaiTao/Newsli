@@ -43,7 +43,8 @@ public class SliPresenter implements SliContract.Presenter {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEvent(CountryEvent countryEvent) {
         if (this.view != null) {
-            model.fetchData(countryEvent.country);
+            // TODO: mapping here?
+            this.model.fetchData(countryEvent.country);
         }
     }
 
