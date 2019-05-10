@@ -28,9 +28,16 @@ public class ProfilePresenter implements ProfileContract.Presenter {
 
     @Override
     public View.OnClickListener getOnCountryChangeListener(String country) {
-        return view -> {
-            model.setDefaultCountry(country);
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                model.setDefaultCountry(country);
+                // TODO: change the donate/about logic in the same way here.
+            }
         };
+//        return view -> {
+//            model.setDefaultCountry(country);
+//        };
     }
 
     @Override

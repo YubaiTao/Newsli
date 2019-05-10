@@ -50,6 +50,7 @@ public class SavedNewsViewModel extends BaseViewModel<SavedNewsViewModel.SavedNe
         holder.itemView.setOnClickListener(view -> {
             fragmentManager.doFragmentTransaction(SavedNewsDetailedFragment.newInstance(news));
         });
+        // TODO: add hover delete here.
     }
 
     @DrawableRes
