@@ -16,5 +16,6 @@
         android:text="No Saved News"
         android:fontFamily="@font/coves_bold"
         android:layout_centerInParent="true"
-        android:id="@+id/empty_state" android:textColor="@color/gray"/>
+        android:id="@+id/empty_state"
+        android:textColor="@color/gray"/>
 </RelativeLayout>

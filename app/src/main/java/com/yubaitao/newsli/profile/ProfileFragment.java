@@ -11,8 +11,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.yubaitao.newsli.R;
+import com.yubaitao.newsli.WebViewActivity;
 import com.yubaitao.newsli.common.ViewModelAdapter;
 import com.yubaitao.newsli.mvp.MVPFragment;
+import com.yubaitao.newsli.profile.setting.SettingAboutFragment;
+import com.yubaitao.newsli.profile.setting.SettingDonateFragment;
+import com.yubaitao.newsli.save.detail.SavedNewsDetailedFragment;
 import com.yubaitao.newsli.save.detail.TitleViewModel;
 
 
@@ -52,6 +56,12 @@ public class ProfileFragment extends MVPFragment<ProfileContract.Presenter> impl
         viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.clear_cache),
                 presenter.getCacheClearListener()));
 
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.donate),
+                getDonateFragmentListener()));
+
+        viewModelAdapter.addViewModel(new RowTextViewModel(getString(R.string.about),
+                getAboutFragmentListener()));
+
         viewModelAdapter.addViewModel(new TitleViewModel(getString(R.string.change_source),
                 R.layout.setting_title_layout));
 
@@ -74,5 +84,22 @@ public class ProfileFragment extends MVPFragment<ProfileContract.Presenter> impl
         Toast.makeText(getContext(), "Cache has been cleared", Toast.LENGTH_SHORT).show();
     }
 
+    private View.OnClickListener getDonateFragmentListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nsFragmentManager.doFragmentTransaction(SettingDonateFragment.newInstance());
+            }
+;        };
+    }
+
+    private View.OnClickListener getAboutFragmentListener() {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nsFragmentManager.doFragmentTransaction(SettingAboutFragment.newInstance());
+            }
+        };
+    }
 
 }

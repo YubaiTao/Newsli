@@ -57,6 +57,12 @@ public class SavedNewsDetailedFragment extends NSBasicFragment {
     private void loadNews(News news) {
         List<BaseViewModel> viewModels = new LinkedList<>();
 
+        // Test usage
+        // TODO: Remove this in beta
+        if (news == null) {
+            return;
+        }
+
         if (!Util.isStringEmpty(news.title)) {
             viewModels.add(new TitleViewModel(news.title, R.layout.title_layout));
         }

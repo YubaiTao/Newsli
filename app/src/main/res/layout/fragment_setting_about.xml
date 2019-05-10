@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_black"
+    tools:context=".profile.setting.SettingAboutFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Newsli v0.1"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:fontFamily="@font/coves_bold"
+            android:textColor="@color/pearl_white"/>
+        <View
+            android:layout_width="100sp"
+            android:layout_height="0.5dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/pearl_white"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="YubaiTao"
+            android:gravity="center_horizontal"
+            android:textSize="15sp"
+            android:fontFamily="@font/coves_light"
+            android:textColor="@color/pearl_white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="JinghongTang"
+            android:textSize="15sp"
+            android:fontFamily="@font/coves_light"
+            android:textColor="@color/pearl_white"/>
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="YubaiTao"-->
+        <!--android:fontFamily="@font/coves_bold"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:textColor="@color/gray"/>-->
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="JinghongTang"-->
+        <!--android:fontFamily="@font/coves_bold"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:textColor="@color/gray"/>-->
+
+</RelativeLayout>
