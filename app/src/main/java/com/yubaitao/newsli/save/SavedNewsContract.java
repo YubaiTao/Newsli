@@ -9,6 +9,7 @@ public interface SavedNewsContract {
 
     interface View extends MVPContract.View<Presenter> {
         void loadSavedNews(List<News> newsList);
+        boolean isViewEmpty();
     }
 
     interface Presenter extends MVPContract.Presenter<View, Model> {

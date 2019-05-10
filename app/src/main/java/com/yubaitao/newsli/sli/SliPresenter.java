@@ -7,17 +7,22 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SliPresenter implements SliContract.Presenter {
 
     private SliContract.View view;
     private SliContract.Model model;
 
+
+
     SliPresenter() {
         this.model = new SliModel();
         this.model.setPresenter(this);
     }
+
 
     @Override
     public void onCreate() {
@@ -37,7 +42,9 @@ public class SliPresenter implements SliContract.Presenter {
 
     @Override
     public void onDestroy() {
-        EventBus.getDefault().unregister(this);
+        // TODO: Unregister here will cause
+        // TODO: the change country event would not be caught here
+        // EventBus.getDefault().unregister(this);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

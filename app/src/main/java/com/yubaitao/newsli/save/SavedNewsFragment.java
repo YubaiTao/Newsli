@@ -29,6 +29,8 @@ public class SavedNewsFragment extends MVPFragment<SavedNewsContract.Presenter>
 
     private ViewModelAdapter savedNewsAdapter;
     private TextView emptyState;
+    private LinearLayoutManager linearLayoutManager;
+    private int initPosition = -1;
 
 
     public static SavedNewsFragment newInstance() {
@@ -44,9 +46,17 @@ public class SavedNewsFragment extends MVPFragment<SavedNewsContract.Presenter>
         View view = inflater.inflate(R.layout.fragment_saved_news, container, false);
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        linearLayoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
         emptyState = view.findViewById(R.id.empty_state);
-        savedNewsAdapter = new ViewModelAdapter();
+        if (isViewEmpty()) {
+            emptyState.setVisibility(View.VISIBLE);
+        } else {
+            emptyState.setVisibility(View.GONE);
+        }
+        if (savedNewsAdapter == null) {
+            savedNewsAdapter = new ViewModelAdapter();
+        }
         recyclerView.setAdapter(savedNewsAdapter);
 
         return view;
@@ -71,5 +81,16 @@ public class SavedNewsFragment extends MVPFragment<SavedNewsContract.Presenter>
             }
             savedNewsAdapter.addViewModels(models);
         }
+    }
+
+    @Override
+    public boolean isViewEmpty() {
+        return savedNewsAdapter == null || savedNewsAdapter.isEmpty();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        initPosition = linearLayoutManager.findFirstVisibleItemPosition();
     }
 }

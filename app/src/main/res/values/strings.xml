@@ -15,9 +15,13 @@
 
     <string name="clear_cache">Clear Cache</string>
     <string name="setting">Setting</string>
+    <string name="about">About</string>
+    <string name="donate">Donate</string>
 
     <!-- Settings -->
     <string name="change_source">Change Source</string>
+
+
     <string name="de">Germany</string>
     <string name="us">United States</string>
     <string name="cn">China</string>

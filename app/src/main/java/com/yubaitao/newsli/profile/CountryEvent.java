@@ -18,5 +18,6 @@ public class CountryEvent {
 
     CountryEvent(String country) {
         this.country = COUNTRY_MAP.get(country);
+//        this.country = country;
     }
 }
